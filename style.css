@@ -1,0 +1,118 @@
+/* ==========================================
+   ANIMASI MARQUEE
+   ========================================== */
+@keyframes marquee {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes marquee-warning-anim {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-once {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 10s linear 1 forwards;
+}
+
+.marquee-warning {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee-warning-anim 20s linear infinite;
+}
+
+/* ==========================================
+   ANIMASI POPUP
+   ========================================== */
+@keyframes popIn {
+  0%   { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.popup-anim {
+  animation: popIn 0.3s ease-out;
+}
+
+/* ==========================================
+   BANNER & WARNING
+   ========================================== */
+.banner-fixed {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.warning-fixed {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* ==========================================
+   PAKET
+   ========================================== */
+.paket {
+  position: relative;
+  z-index: 1;
+  pointer-events: auto !important;
+  cursor: pointer;
+}
+
+/* ==========================================
+   BOTTOM NAVIGATION
+   ========================================== */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;
+  background: #ffffff;
+  border-top: 2px solid #dbeafe;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 0 10px 0;
+  z-index: 40;
+  box-shadow: 0 -4px 12px rgba(30, 58, 138, 0.08);
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 18px;
+  border-radius: 12px;
+  transition: all 0.2s;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.nav-btn:hover {
+  background: #eff6ff;
+}
+
+.nav-btn.active {
+  color: #1e3a8a;
+}
+
+.nav-btn.active svg {
+  stroke: #1e3a8a;
+}
+
+/* ==========================================
+   RUANG BAWAH (agar konten tidak ketutup navbar)
+   ========================================== */
+.konten-bawah {
+  padding-bottom: 90px;
+}

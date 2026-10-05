@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joki Kontak By Wahyu</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#eef5ff]">
+<div class="max-w-[430px] mx-auto bg-white min-h-screen shadow-xl">
+
+<!-- HEADER -->
+<div class="bg-[#1e3a8a] p-4 rounded-b-[20px]">
+<div class="flex items-center gap-3">
+<img src="https://cdn.phototourl.com/member/2026-10-05-6da05726-ca29-4ed9-81b1-1b474906230e.jpg" alt="Logo WSP" class="w-16 h-16 rounded-xl border-2 border-[#3b5fc4] object-cover bg-[#2563eb]">
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1">
+<h1 class="text-white text-xl font-black truncate">WahyuJoki</h1>
+<svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="#60a5fa"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+</div>
+<p class="text-[#93c5fd] text-sm font-bold truncate">Pusat Layanan WahyuJoki</p>
+</div>
+<div class="flex gap-2">
+<button type="button" class="w-12 h-12 rounded-full border-2 border-[#3b5fc4] bg-transparent flex items-center justify-center">
+<svg class="w-6 h-6" fill="none" stroke="#93c5fd" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"/></svg>
+</button>
+<button type="button" class="w-12 h-12 rounded-full border-2 border-[#3b5fc4] bg-transparent flex items-center justify-center">
+<svg class="w-6 h-6" fill="none" stroke="#93c5fd" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+</button>
+</div>
+</div>
+</div>
+
+<!-- BANNER BIRU -->
+<div class="banner-fixed bg-[#2563eb] px-3">
+  <p class="text-white font-bold text-sm w-full" id="marqueeNotif"></p>
+</div>
+
+<div class="p-5 konten-bawah">
+
+<!-- ================= HALAMAN BERANDA ================= -->
+<div id="halamanBeranda">
+
+  <div class="bg-[#dbeafe] rounded-2xl p-5 border-2 border-[#93c5fd]">
+    <div class="inline-block bg-[#bfdbfe] border-2 border-[#1e3a8a] rounded-full px-4 py-1">
+      <span class="text-[#1e3a8a] font-black text-xs tracking-wider">JASA JOKI KONTAK</span>
+    </div>
+    <h2 class="text-[#1e3a8a] font-black text-3xl mt-3 leading-tight">Paket Joki Kontak.</h2>
+    <p class="text-[#1e40af] text-base mt-3 leading-relaxed">
+      Pilih paket dinamis dari admin, isi data promosi, lalu bayar dari website.
+    </p>
+    <div class="mt-5 bg-[#fee2e2] border-2 border-red-500 rounded-2xl warning-fixed px-3">
+      <div class="flex items-center w-full gap-2 overflow-hidden">
+        <span class="text-red-500 text-xl flex-shrink-0">⚠</span>
+        <p class="text-red-600 font-black text-sm marquee-warning">
+          PERINGATAN KANG JOKI KONTAK DI LARANG ORDER, JOKI KONTAK DI WAHYU, JIKA KETAHUAN AKAN DI BLACKLIST • PERINGATAN KANG JOKI KONTAK DI LARANG ORDER, JOKI KONTAK DI WAHYU, JIKA KETAHUAN AKAN DI BLACKLIST •&nbsp;
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div onclick="pilihPaket('PAKET 1 - 5 JAM','Rp 5.000')" id="p1" class="paket mt-5 border-2 border-blue-600 bg-blue-50 p-4 rounded-2xl flex justify-between items-center">
+    <div><b>PAKET 1</b><p class="text-xs opacity-60">5 JAM</p></div>
+    <b class="text-blue-600">Rp 5.000</b>
+  </div>
+
+  <div onclick="pilihPaket('PAKET 2 - 1 HARI','Rp 10.000')" id="p2" class="paket mt-3 border p-4 rounded-2xl flex justify-between items-center">
+    <div><b>PAKET 2</b><p class="text-xs opacity-60">1 HARI</p></div>
+    <b>Rp 10.000</b>
+  </div>
+
+  <div onclick="pilihPaket('PAKET 3 - 2 HARI','Rp 15.000')" id="p3" class="paket mt-3 border p-4 rounded-2xl flex justify-between items-center">
+    <div><b>PAKET 3</b><p class="text-xs opacity-60">2 HARI</p></div>
+    <b>Rp 15.000</b>
+  </div>
+
+  <div class="mt-6">
+    <h2 class="font-black text-[#1e3a8a]">📱 KONTAK PEMESAN</h2>
+    <div id="notifError" class="hidden mt-3 bg-red-500 text-white rounded-xl p-3 text-sm font-bold flex items-center gap-2">
+      <span class="text-lg">❌</span><span>Anda belum mengisi data di bawah!</span>
+    </div>
+    <input id="nama" placeholder="Nama Kamu" oninput="cekKontak()" class="w-full border-2 border-blue-100 p-3 rounded-xl mt-3 outline-none focus:border-blue-500">
+    <input id="wa" placeholder="No WhatsApp Kamu" oninput="cekKontak()" class="w-full border-2 border-blue-100 p-3 rounded-xl mt-2 outline-none focus:border-blue-500">
+  </div>
+
+  <div id="tombolOrderBox" class="hidden mt-6">
+    <button type="button" onclick="orderSekarang()" class="w-full bg-blue-600 text-white font-black py-4 rounded-full shadow-lg text-lg">🛒 ORDER SEKARANG</button>
+  </div>
+
+  <div class="mt-8 text-center pb-10">
+    <p class="text-xs opacity-50">Ada kendala? Hubungi Admin</p>
+    <a href="https://wa.me/62895401139306" class="text-blue-600 font-bold text-sm">WhatsApp : 0895-4011-39306</a>
+  </div>
+
+</div>
+
+<!-- ================= HALAMAN TENTANG ================= -->
+<div id="halamanTentang" class="hidden">
+
+  <div class="bg-[#dbeafe] rounded-2xl p-5 border-2 border-[#93c5fd] text-center">
+    <div class="w-20 h-20 bg-[#1e3a8a] rounded-full flex items-center justify-center mx-auto">
+      <svg class="w-12 h-12" fill="none" stroke="#93c5fd" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10"/>
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v5m0 3h.01"/>
+      </svg>
+    </div>
+    <h2 class="text-[#1e3a8a] font-black text-2xl mt-3">Tentang WahyuJoki</h2>
+    <p class="text-[#1e40af] text-sm mt-2">Pusat Layanan Joki Kontak Terpercaya</p>
+  </div>
+
+  <div class="mt-5 bg-white border-2 border-blue-100 rounded-2xl p-5">
+    <h3 class="font-black text-[#1e3a8a] text-lg">📖 Deskripsi</h3>
+    <p class="text-sm text-gray-700 mt-2 leading-relaxed">
+      <b>WahyuJoki</b> adalah layanan jasa joki kontak yang menyediakan berbagai paket promosi
+      untuk membantu meningkatkan jangkauan kontak Anda. Kami melayani dengan cepat, aman,
+      dan terpercaya.
+    </p>
+  </div>
+
+  <div class="mt-3 bg-white border-2 border-blue-100 rounded-2xl p-5">
+    <h3 class="font-black text-[#1e3a8a] text-lg">✨ Keunggulan</h3>
+    <ul class="text-sm text-gray-700 mt-2 space-y-2">
+      <li class="flex items-start gap-2"><span class="text-green-500 font-black">✓</span> Proses cepat & otomatis</li>
+      <li class="flex items-start gap-2"><span class="text-green-500 font-black">✓</span> Harga terjangkau</li>
+      <li class="flex items-start gap-2"><span class="text-green-500 font-black">✓</span> Pembayaran via QRIS</li>
+      <li class="flex items-start gap-2"><span class="text-green-500 font-black">✓</span> Admin responsif 24 jam</li>
+    </ul>
+  </div>
+
+  <div class="mt-3 bg-white border-2 border-blue-100 rounded-2xl p-5">
+    <h3 class="font-black text-[#1e3a8a] text-lg">📞 Kontak Admin</h3>
+    <p class="text-sm text-gray-700 mt-2">WhatsApp : <b>0895-4011-39306</b></p>
+    <a href="https://wa.me/62895401139306" class="mt-3 inline-block bg-[#25D366] text-white font-bold px-5 py-2 rounded-full text-sm">Chat Admin</a>
+  </div>
+
+  <div class="mt-3 bg-[#fee2e2] border-2 border-red-400 rounded-2xl p-5">
+    <h3 class="font-black text-red-600 text-lg">⚠ Perhatian</h3>
+    <p class="text-sm text-red-700 mt-2 leading-relaxed">
+      Dilarang order joki kontak di luar WahyuJoki. Jika ketahuan akan di <b>blacklist</b>.
+    </p>
+  </div>
+
+  <div class="mt-8 text-center pb-10">
+    <p class="text-xs opacity-50">© 2026 WahyuJoki. All rights reserved.</p>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+<!-- ================= BOTTOM NAVIGATION ================= -->
+<div class="bottom-nav">
+  <button type="button" class="nav-btn active" id="navBeranda" onclick="bukaHalaman('beranda')">
+    <svg class="w-6 h-6" fill="none" stroke="#64748b" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10"/>
+    </svg>
+    <span>Beranda</span>
+  </button>
+
+  <button type="button" class="nav-btn" id="navTentang" onclick="bukaHalaman('tentang')">
+    <svg class="w-6 h-6" fill="none" stroke="#64748b" stroke-width="2" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"/>
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v5m0 3h.01"/>
+    </svg>
+    <span>Tentang</span>
+  </button>
+</div>
+
+<!-- POPUP QRIS -->
+<div id="qrisPopup" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-5">
+  <div class="popup-anim bg-black rounded-2xl p-5 text-white text-center border-4 border-black max-w-sm w-full">
+    <h3 class="font-bold text-base tracking-wide">DEPOSIT QRIS</h3>
+    <p class="text-[11px] opacity-80 leading-tight mt-1">(PROSES CEPAT, GAMPANG &<br>AUTOMATIS)</p>
+    <div class="bg-white p-3 mt-4 rounded-sm">
+      <img id="imgQris" src="" alt="QRIS Wahyu Store Subang" class="w-full block">
+    </div>
+    <div class="mt-4 text-left text-sm space-y-3">
+      <div class="flex justify-between items-start gap-2">
+        <span class="opacity-80">Nominal<br>Deposit</span>
+        <b class="text-right">: <span id="nominalQris"></span></b>
+      </div>
+      <div class="flex justify-between items-start gap-2">
+        <span class="opacity-80">Status</span>
+        <b class="text-right">: Menunggu<br>Pembayaran</b>
+      </div>
+    </div>
+    <div class="mt-4 bg-red-500/20 border-2 border-red-500 rounded-xl py-3">
+      <p class="text-xs text-red-300">Bayar dalam</p>
+      <p class="font-black text-3xl text-red-400 tracking-wider" id="qrisTimer">15:00</p>
+      <p class="text-xs text-red-300">menit</p>
+    </div>
+    <button type="button" onclick="konfirmasiTF()" class="w-full bg-[#1e293b] text-white font-bold py-3 rounded-md mt-4">✅ SAYA SUDAH TRANSFER</button>
+    <button type="button" onclick="tutupQris()" class="w-full text-gray-400 text-xs mt-2 py-2">Batal</button>
+  </div>
+</div>
+
+<!-- POPUP STRUK -->
+<div id="strukPopup" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-5">
+  <div class="popup-anim bg-white rounded-3xl p-5 text-center shadow-2xl border-4 border-green-500 max-w-sm w-full max-h-[90vh] overflow-y-auto">
+    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto text-white text-3xl">✓</div>
+    <h3 class="font-black text-green-600 mt-3">TRANSFER BERHASIL!</h3>
+    <p class="text-[11px] opacity-60" id="tglStruk"></p>
+    <div class="bg-[#f8fafc] rounded-xl p-4 mt-4 text-left text-sm space-y-2">
+      <div class="flex justify-between"><span class="opacity-50">Order ID</span><b id="idOrder">#JK-</b></div>
+      <div class="flex justify-between"><span class="opacity-50">Paket</span><b id="paketStruk"></b></div>
+      <div class="flex justify-between"><span class="opacity-50">Nama</span><b id="namaStruk"></b></div>
+      <div class="flex justify-between"><span class="opacity-50">Metode</span><b>QRIS Wahyu Store Subang</b></div>
+      <div class="border-t pt-2 flex justify-between"><span class="opacity-50">Total Bayar</span><b id="totalStruk" class="text-blue-600"></b></div>
+      <div class="flex justify-between items-center"><span class="opacity-50">Status</span><span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">Sudah Transfer ✓</span></div>
+    </div>
+    <p class="text-xs mt-4 opacity-60">Screenshot struk ini & kirim ke admin</p>
+    <button type="button" onclick="waAdmin()" class="w-full bg-[#25D366] text-white font-bold py-3 rounded-full mt-3">KIRIM KE WHATSAPP ADMIN</button>
+    <button type="button" onclick="tutupStruk()" class="w-full text-gray-400 text-xs mt-2 py-2">Tutup</button>
+  </div>
+</div>
+
+<!-- POPUP HARAP TUNGGU -->
+<div id="popupOrder" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-5">
+  <div class="popup-anim bg-white rounded-3xl p-6 max-w-sm w-full text-center shadow-2xl border-4 border-blue-500">
+    <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto text-white text-4xl">⏳</div>
+    <h3 class="font-black text-[#1e3a8a] text-lg mt-4">ANDA SUDAH ORDER</h3>
+    <p class="text-sm text-gray-600 mt-1">Harap tunggu</p>
+    <div class="bg-blue-50 border-2 border-blue-200 rounded-2xl py-4 mt-4">
+      <p class="font-black text-4xl text-blue-600 tracking-wider" id="timerText">01:00</p>
+      <p class="text-xs text-gray-500 mt-1">sisa waktu</p>
+    </div>
+    <p class="text-xs text-gray-500 mt-4">Setelah waktu habis, kamu bisa order lagi</p>
+    <p class="text-[11px] text-gray-400 mt-2">Order ID: <b id="popupOrderId">#JK-</b></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
